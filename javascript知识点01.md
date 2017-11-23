@@ -160,11 +160,11 @@
 ### JS数组深浅拷贝
 -  **slice实现** 	
 
-	*      var arr = ['old', 1, true, null, undefined];
-	* 	var new_arr = arr.slice(); 
-	* 	new_arr[0] = 'new';
-	* 	console.log(arr) // ["old", 1, true, null, undefined]
-	* 	console.log(new_arr) // ["new", 1, true, null, undefined]
+		*   var arr = ['old', 1, true, null, undefined];
+		* 	var new_arr = arr.slice(); 
+		* 	new_arr[0] = 'new';
+		* 	console.log(arr) // ["old", 1, true, null, undefined]
+		* 	console.log(new_arr) // ["new", 1, true, null, undefined]
 
 	
 - **concat实现**
@@ -236,7 +236,18 @@ Array.prototype.filter()方法创建一个新的数组，新数组中的元素�
 Array.prototype.indexOf() 方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。
 
 Array.prototype.sort() 方法在适当的位置对数组的元素进行排序，并返回数组。
+		
+- indexOf()
 
+		var arr1 =[1,2,2,2,3,3,3,4,5,6],
+		    arr2 = [];
+		for(var i = 0,len = arr1.length; i< len; i++){
+		    if(arr2.indexOf(arr1[i]) < 0){
+		        arr2.push(arr1[i]);
+		    }
+		}
+		document.write(arr2); // 1,2,3,4,5,6
+		
 - filter + indexOf  
    
 		function unique (arr) {
@@ -252,8 +263,7 @@ Array.prototype.sort() 方法在适当的位置对数组的元素进行排序，
 		    return arr.concat().sort().filter(function (item, index, array) {
 		        return !index || item !== array[index - 1];
 		    })
-		}
-
+		} 
 - ES6
 
 		function uniqu3 (arr) {
@@ -286,6 +296,16 @@ Array.prototype.reduce() 方法对数组中的每个元素（从左到右）开�
 		    return Math.max(...arr);   // 扩展运算符（…）
 		}
 		console.log(max(arr));
+
+## 字符串
+
+### 写一个function，清除字符串前后的空格。（兼容所有浏览器）
+
+	function trim(str) {
+	    if (str && typeof str === "string") {
+	        return str.replace(/(^\s*)|(\s*)$/g,""); //去除前后空白符
+	    }
+	}
 
 ## 创建对象
 - 工厂模式
