@@ -1,0 +1,9 @@
+## CSS原理
+1. 形成BFC(Block Formatting Context)的几种方式
+
+	BFC全称”Block Formatting Context”, 中文为“块级格式化上下文”。BFC元素特性表现原则就是，内部子元素再	怎么翻江倒海，翻云覆雨都不会影响外部的元素。
+	#### 形成条件：
+	 -  float为 left|right
+	 -  overflow为 hidden | auto | scroll
+	 - display为 table-cell | table-caption | inline-block
+	 - position为 absolute | fixed
