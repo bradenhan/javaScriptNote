@@ -18,7 +18,7 @@ ajxa : XMLHttpRequest () 不能跨域
     
         <script src="xxx.php?key=value&key2=value2"></script>
         
-        jsonp : json + padding （内填充原理，把JSON填充到一个盒子里）
+        jsonp : JSON width Padding （内填充原理，把JSON填充到一个盒子里）
         
          b网站执行
         box({name : 'name'})
@@ -64,4 +64,35 @@ ajxa : XMLHttpRequest () 不能跨域
     
     		xhr.send();
     	}
+    })()
+
+
+### jsonp 原理
+
+**实现原理：**
+
+1. script 标签 （其他如：img、link）通过标签src属性赋值，去加载某个服务器下面的资源
+2. 用script标签加载资源的是没有跨域问题的
+
+        <script src="xxx.php?key=value&key2=value2"></script>
+        
+在资源加载进来之前定义一个函数，这个函数接受一个参数（数据），函数里面利用这个参数做一些事情
+
+在需要的时候通过script标签加载对应远程文件资源，当远程的文件资源被加载进来的时候，就会去执行我们前面定义的函数，并且把数据当作函数的参数传入进去。
+
+**问题：**
+
+    function fn (data){
+    		console.log(data);
+    }
+    
+    (function(){
+    	 var oDiv = document.getElementById('obt');
+    
+    	oDiv.onclick = function(){
+    		// 当点击按钮的时候再去加载远程资源，让他执行 （动态创建标签）
+    		var oScript = document.createElement('script');
+    		oScript.src = 'xxx.php?key=value&key2=value2';
+    		document.getElementsByTagName('head')[0].appendChild(oScript)
+    	}     
     })()
