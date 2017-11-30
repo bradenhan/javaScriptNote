@@ -9,4 +9,5 @@
 - [事件委托](事件委托.md)
 - [js跨域](js跨域.md)
 - [枚举算法](枚举算法.md)
+- [JavaScript-浮点数运算](JavaScript-浮点数运算.md)
 
