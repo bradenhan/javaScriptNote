@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    #ul1 {
+      height: auto;
+      overflow: hidden;
+      margin: 20px auto;
+      border: 1px #000 solid;
+      border-bottom: none;
+      border-right: none;
+    }
+
+    #ul1 li {
+      border: 1px #000 solid;
+      border-top: none;
+      border-left: none;
+      float: left;
+    }
+
+    #ul1 li.sty1 {
+      background: red;
+    }
+
+    #ul1 li.sty2 {
+      background: green;
+    }
+
+    #ul1 li.sty3 {
+      background: blue;
+    }
+
+    #input1 {
+      width: 100px;
+      position: absolute;
+      left: 50%;
+      margin-left: -50px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="ul1">
+  </ul>
+  <input type="button" value="开始寻路" id="input1">
+  <script>
+    var oUl = document.getElementById('ul1');
+    var aLi = oUl.getElementsByTagName('li');
+    var oInput = document.getElementById('input1');
+    var beginLi = oUl.getElementsByClassName('sty1');
+    var endLi = oUl.getElementsByClassName('sty2');
+
+    var map = [
+    	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,3,3,3,3,3,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,1,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,2,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,3,3,3,3,3,3,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+    ];
+
+    var cols = Math.sqrt(map.length);
+    var sizeGird = 20;
+    var openArr = [];
+    var closeArr = [];
+
+    init();
+
+    // 初始化
+    function init(){
+    	createMap();
+      oInput.onclick = function(){
+    		openFn();
+    	};
+    }
+
+    function openFn(){
+      // 第一次获取起始点
+      var nowLi = openArr.shift();
+
+      // 添加起始点到排除干扰点
+      closeFn(nowLi);
+
+      // 封装查找节点函数
+      findLi(nowLi);
+    }
+    function closeFn(nowLi){
+      closeArr.push( nowLi );
+    }
+
+    // 查找节点函数
+    function findLi(nowLi){
+      var result = [];
+      for(var i=0;i<aLi.length;i++){
+        if( filter(aLi[i]) ){
+    			result.push( aLi[i] );
+    		}
+      }
+
+      function filter(li){
+        for(var i=0;i<closeArr.length;i++){
+          if( closeArr[i] == li ){
+    				return false;
+    			}
+        }
+      }
+    }
+
+    // 创建节点
+    function createMap(){
+      oUl.style.width = cols * (sizeGird + 1) + 'px';
+      for(var i=0;i<map.length;i++){
+        var oLi = document.createElement('li');
+    		oLi.style.width = sizeGird + 'px';
+    		oLi.style.height = sizeGird + 'px';
+    		oUl.appendChild(oLi);
+
+        if( map[i] == 1 ){
+    			oLi.className = 'sty1';
+          openArr.push(oLi);
+    		}
+    		else if(map[i] == 2){
+    			oLi.className = 'sty2';
+    		}
+    		else if(map[i] == 3){
+    			oLi.className = 'sty3';
+          closeArr.push(oLi);
+    		}
+      }
+    }
+
+    // 创建估价函数 f(n) = g(h) + h(n)
+    function f(nodeLi){
+      return g(nodeLi) + h(nodeLi);
+    }
+    function g(nodeLi){
+      var a = beginLi[0].offsetLeft - nodeLi.offsetLeft;
+	    var b = beginLi[0].offsetTop - nodeLi.offsetTop;
+      return Math.sqrt(a*a + b*b);
+    }
+    function h(nodeLi){
+      var a = endLi[0].offsetLeft - nodeLi.offsetLeft;
+    	var b = endLi[0].offsetTop - nodeLi.offsetTop;
+    	return Math.sqrt(a*a + b*b);
+    }
+  </script>
+</body>
+</html>
