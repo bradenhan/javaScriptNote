@@ -1,5 +1,6 @@
 ## 目录
 
+## javascript零星知识点
 - [作用域链和原型链](./javascript零星知识点/20171122.md)
 - [ES6简介](./javascript零星知识点/ES6简介.md)
 - [数据存储有关知识](./javascript零星知识点/数据存储.md)
@@ -10,6 +11,12 @@
 - [js跨域](./javascript零星知识点/js跨域.md)
 - [枚举算法](./javascript零星知识点/枚举算法.md)
 - [JavaScript-浮点数运算](./javascript零星知识点/JavaScript-浮点数运算.md)
+- [Javascript Array中方法对数组原对象的影响分析](Javascript-Array中方法对数组原对象的影响分析.md)
+
+
+## JavaScript基础部分
+- [函数传参、参数类型](./JavaScript基础部分/函数传参-参数类型.md)
+- [字符串查找高亮显示](./JavaScript基础部分/字符串查找高亮显示.md)
 
 
 ## JS算法与数据结构
