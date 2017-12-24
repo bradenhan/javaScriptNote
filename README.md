@@ -27,7 +27,8 @@
     - [A* 寻路demo](./JS算法与数据结构//example/star/star.html)
 
 ## JS异步处理
-- [理解异步](./JS异步处理/理解异步)
-- [异步和event-loop.md](异步和event-loop)
+- [理解异步](./JS异步处理/理解异步.md)
+- [深入理解 JavaScript 异步系列](JS异步处理/深入理解-JavaScript-异步系列.md)
+- [异步和event-loop.md](异步和event-loop.md)
 
 ## [深入理解javascript原型和闭包系列](http://www.cnblogs.com/wangfupeng1988/p/4001284.html)
