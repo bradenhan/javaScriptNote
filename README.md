@@ -12,6 +12,7 @@
 - [枚举算法](./javascript零星知识点/枚举算法.md)
 - [JavaScript-浮点数运算](./javascript零星知识点/JavaScript-浮点数运算.md)
 - [Javascript Array中方法对数组原对象的影响分析](Javascript-Array中方法对数组原对象的影响分析.md)
+- [JavaScript——slice和splice的区别](JavaScript——slice和splice的区别.md)
 
 
 ## JavaScript基础部分
@@ -24,3 +25,9 @@
 - [寻路模式](./JS算法与数据结构/寻路模式.md)
   - [A*寻路](./JS算法与数据结构/A*寻路.md)
     - [A* 寻路demo](./JS算法与数据结构//example/star/star.html)
+
+## JS异步处理
+- [理解异步](./JS异步处理/理解异步)
+- [异步和event-loop.md](异步和event-loop)
+
+## [深入理解javascript原型和闭包系列](http://www.cnblogs.com/wangfupeng1988/p/4001284.html)
