@@ -32,3 +32,13 @@
 - [异步和event-loop.md](异步和event-loop.md)
 
 ## [深入理解javascript原型和闭包系列](http://www.cnblogs.com/wangfupeng1988/p/4001284.html)
+
+## Flex 布局教程
+- [Flex 布局教程：语法篇](./CSS-布局教程/Flex-布局教程-语法篇.md)
+- [Flex 布局教程：实例篇](./CSS-布局教程/Flex-布局教程-布局教程：实例篇.md)
+
+## Console
+- [console](https://developer.mozilla.org/zh-CN/docs/Web/API/Console) 
+
+## HTML5
+- [HTML5](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5)
