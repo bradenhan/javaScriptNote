@@ -12,6 +12,10 @@ HTTP 协议是互联网的基础协议，也是网页开发的必备知识，最
 
 ![](./images/bg2016081901.jpg)
 
+![](https://mdn.mozillademos.org/files/13677/Fetching_a_page.png)
+
+客户端和服务端通过交换各自的消息（与数据流正好相反）进行交互。由像浏览器这样的客户端发出的消息叫做 requests，被服务端回应的消息叫做 responses。
+
 ##历史演变
 
 ### 一、HTTP/0.9
