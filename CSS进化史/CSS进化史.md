@@ -182,5 +182,6 @@ CSS预处理器和CSS后处理器让CSS开发体验有了巨大的提升，但�
 
 ## 参考资料
 - [CSS - MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
+- [【第1195期】现代CSS进化史](https://mp.weixin.qq.com/s/LixbmPT8m3JcrrXfMKh-UA)
 - [前端工程师应该了解的 CSS 进化史](http://blog.sina.com.cn/s/blog_e98e2a8e0102wmud.html)
 - [BEM思想之彻底弄清BEM语法](https://www.w3cplus.com/css/mindbemding-getting-your-head-round-bem-syntax.html)
