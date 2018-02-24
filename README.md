@@ -31,6 +31,9 @@
 - [深入理解 JavaScript 异步系列](JS异步处理/深入理解-JavaScript-异步系列.md)
 - [异步和event-loop.md](异步和event-loop.md)
 
+## JS模块化
+- [JS模块化](JS模块化/JS模块化.md)
+
 ## [深入理解javascript原型和闭包系列](http://www.cnblogs.com/wangfupeng1988/p/4001284.html)
 
 ## Flex 布局教程
