@@ -73,15 +73,17 @@ console.log语句产生了 4 条输出，证明foo(..)确实被调用了 4 次�
 - 异：作用域“对象”无法通过 JavaScript 代码访问，它存在于 JavaScript 引擎内部。
 
 
-    function foo() {     
-      var a = 2;     
-      this.bar();
-    }
-     function bar() {     
-       console.log( this.a );
-    }
 
-    foo(); // ReferenceError: a is not defined
+      function foo() {     
+        var a = 2;     
+        this.bar();
+      }
+       function bar() {     
+         console.log( this.a );
+      }
+
+      foo(); // ReferenceError: a is not defined
+
 
 首先，这段代码试图通过this.bar()来引用bar()函数,这是绝对不可能成功的。
 
@@ -599,7 +601,7 @@ foo() 内部创建的箭头函数会捕获调用时 foo() 的 this。由于 foo(
     - 被忽略的this
     - 间接引用
     - 箭头函数
-    
+
 ### 参考文章
 - [Function.prototype.apply()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 - [Function.prototype.call()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
