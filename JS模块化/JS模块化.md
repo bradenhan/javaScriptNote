@@ -38,7 +38,8 @@ C语言的库和头文件（include），java的包（import）。这在其他�
 
 ##### 2.1.2 对象写法
 为了解决上面的缺点，可以把模块写成一个对象，所有的模块成员都放到这个对象里面。
-<pre>
+
+
   var module1 = new Object({
   　count: 0,
   　m1 : function (){
@@ -48,7 +49,7 @@ C语言的库和头文件（include），java的包（import）。这在其他�
   　　//...
   　}
   });
-</pre>
+
 
 上面的函数m1()和m2(），都封装在module1对象里。使用的时候，就是调用这个对象的属性。
 
@@ -197,45 +198,49 @@ AMD 定义了一套 JavaScript 模块依赖异步加载标准，来解决同步�
 **一些用例：**
 定义一个名为 myModule 的模块，它依赖 jQuery 模块：
 
-    define('myModule', ['jquery'], function($) {
-        // $ 是 jquery 模块的输出
-        $('body').text('hello world');
-    });
-    // 使用
-    require(['myModule'], function(myModule) {});
+
+      define('myModule', ['jquery'], function($) {
+          // $ 是 jquery 模块的输出
+          $('body').text('hello world');
+      });
+      // 使用
+      require(['myModule'], function(myModule) {});
+
 
 **注意**
 
 - 定义一个没有 id 值的匿名模块，通常作为应用的启动函数：
 
-      define(['jquery'], function($) {
-          $('body').text('hello world');
-      });
+        define(['jquery'], function($) {
+            $('body').text('hello world');
+        });
 
 - 依赖多个模块的定义：
 
-      define(['jquery', './math.js'], function($, math) {
-        // $ 和 math 一次传入 factory
-        $('body').text('hello world');
-      });
+        define(['jquery', './math.js'], function($, math) {
+          // $ 和 math 一次传入 factory
+          $('body').text('hello world');
+        });
 
 - 模块输出：
 
-      define(['jquery'], function($) {
-        var HelloWorldize = function(selector){
-            $(selector).text('hello world');
-        };
 
-        // HelloWorldize 是该模块输出的对外接口
-        return HelloWorldize;
-      });
+        define(['jquery'], function($) {
+          var HelloWorldize = function(selector){
+              $(selector).text('hello world');
+          };
+
+          // HelloWorldize 是该模块输出的对外接口
+          return HelloWorldize;
+        });
+
 
 - 在模块定义内部引用依赖：
 
-      define(function(require) {
-        var $ = require('jquery');
-        $('body').text('hello world');
-      });
+        define(function(require) {
+          var $ = require('jquery');
+          $('body').text('hello world');
+        });
 
 ### 2.4 UMD
 AMD 与 CommonJS 虽然师出同源，但还是分道扬镳.
@@ -322,12 +327,12 @@ ES6 的原生模块功能非常棒，它兼顾了规范、语法简约性和异�
 ## 总结
 1. 模块化的发展：
     - 原始写法
-      - 函数写法
-      - 对象写法
-      - 立即执行函数写法
-      - 放大模式
-      - 宽放大模式
-      - 输入全局变量
+        - 函数写法
+        - 对象写法
+        - 立即执行函数写法
+        - 放大模式
+        - 宽放大模式
+        - 输入全局变量
     - 依赖注入
     - CommonJS
     - AMD
