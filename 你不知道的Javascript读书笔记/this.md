@@ -74,15 +74,15 @@ console.log语句产生了 4 条输出，证明foo(..)确实被调用了 4 次�
 
 
 
-      function foo() {     
-        var a = 2;     
-        this.bar();
-      }
-       function bar() {     
-         console.log( this.a );
-      }
+        function foo() {     
+          var a = 2;     
+          this.bar();
+        }
+         function bar() {     
+           console.log( this.a );
+        }
 
-      foo(); // ReferenceError: a is not defined
+        foo(); // ReferenceError: a is not defined
 
 
 首先，这段代码试图通过this.bar()来引用bar()函数,这是绝对不可能成功的。
@@ -287,13 +287,13 @@ JavaScript 提供的绝大多数函数以及自定义的所有函数都可以使
 - 一个数组或者类数组对象，其中的数组元素将作为单独的参数传给 fun 函数。如果该参数的值为null 或 undefined，则表示不需要传入任何参数。      从ECMAScript 5 开始可以使用类数组对象。
 
 
-    function foo() {
-      console.log( this.a );
-    }
-    var obj = {
-      a:2
-    };
-    foo.call( obj ); // 2
+      function foo() {
+        console.log( this.a );
+      }
+      var obj = {
+        a:2
+      };
+      foo.call( obj ); // 2
 
 > 通过 foo.call(..)，我们可以在调用 foo 时强制把它的 this 绑定到 obj 上。
 
@@ -417,11 +417,13 @@ JavaScript 也有一个 new 操作符，使用方法看起来也和那些面向�
 4.  如果函数没有返回其他对象，那么 new 表达式中的函数调用会自动返回这个新对象。
 
 
-    function foo(a) {
-      this.a = a;
-    }
+        function foo(a) {
+          this.a = a;
+        }
 
-    var bar = new foo(2); console.log( bar.a ); // 2
+        var bar = new foo(2);
+        console.log( bar.a ); // 2
+
 
 使用 new 来调用 foo(..) 时，我们会构造一个新对象并把它绑定到 foo(..) 调用中的 this上。
 

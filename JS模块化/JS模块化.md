@@ -20,7 +20,8 @@
 C语言的库和头文件（include），java的包（import）。这在其他语言中都是原生支持的特性，在js中却是没有的(ES6中已经引入了import模块)。
 
 ### 2 模块的发展
-#### 2.1 原始写法
+
+### 2.1 原始写法
 ##### 2.1.1 函数写法
 
     function m1(){
@@ -40,15 +41,15 @@ C语言的库和头文件（include），java的包（import）。这在其他�
 为了解决上面的缺点，可以把模块写成一个对象，所有的模块成员都放到这个对象里面。
 
 
-  var module1 = new Object({
-  　count: 0,
-  　m1 : function (){
-  　　//...
-  　},
-  　m2 : function (){
-  　　//...
-  　}
-  });
+    var module1 = new Object({
+    　count: 0,
+    　m1 : function (){
+    　　//...
+    　},
+    　m2 : function (){
+    　　//...
+    　}
+    });
 
 
 上面的函数m1()和m2(），都封装在module1对象里。使用的时候，就是调用这个对象的属性。
