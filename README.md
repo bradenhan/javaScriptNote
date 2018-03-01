@@ -36,6 +36,9 @@
 
 ## [深入理解javascript原型和闭包系列](http://www.cnblogs.com/wangfupeng1988/p/4001284.html)
 
+## JS特效
+- [JavaScript特效](JavaScript特效/README.md)
+
 ## Flex 布局教程
 - [Flex 布局教程：语法篇](./CSS-布局教程/Flex-布局教程-语法篇.md)
 - [Flex 布局教程：实例篇](./CSS-布局教程/Flex-布局教程-布局教程：实例篇.md)
